@@ -2,6 +2,7 @@ const DELAY = 1000;
 const studentById = {
   20081102: {
     id: '20081102',
+    studentNumber: '20081102',
     firstName: 'Hubert',
     lastName: 'Stefanski',
     email: '20081102@mail.wit.ie',
@@ -10,6 +11,7 @@ const studentById = {
   },
   20081103: {
     id: '20081103',
+    studentNumber: '20081103',
     firstName: 'Adam',
     lastName: 'Walshe',
     email: '20081103@mail.wit.ie',
@@ -25,9 +27,10 @@ const studentIds = [
 ];
 
 const Student = ({
-  id, firstName, lastName, email, dateOfBirth, password,
+  id, studentNumber, firstName, lastName, email, dateOfBirth, password,
 }) => ({
   id,
+  studentNumber,
   firstName,
   lastName,
   email,
@@ -43,6 +46,7 @@ const Student = ({
 });
 module.exports = {
   create({
+    studentNumber,
     firstName,
     lastName,
     email,
@@ -54,6 +58,7 @@ module.exports = {
         const id = Date.now().toString();
         studentById[id] = {
           id,
+          studentNumber,
           firstName,
           lastName,
           email,
